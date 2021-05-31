@@ -1,0 +1,28 @@
+body {
+	margin: 0;
+}
+
+.panel-container {
+	display: flex;
+	align-items: center;
+}
+
+.panel {
+	flex-basis: 50%;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+}
+
+.team-a {
+	background-color: blue;
+}
+
+.team-b {
+	background-color: red;
+}
+
+.score {
+	font-size: 250px;
+	color: white;
+}

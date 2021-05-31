@@ -76,6 +76,12 @@ app.put('/b/down', (req, res) => {
 	res.send()
 })
 
+app.put('/reset', (req, res) => {
+	db.run('UPDATE score SET a = 0, b = 0')
+	sendScoreToClients()
+	res.send()
+})
+
 app.listen(port, () => {
 	console.log(`Ping pong app listening at http://localhost:${port}`)
 })
