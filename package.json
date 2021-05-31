@@ -1,0 +1,16 @@
+{
+  "name": "ping-pong-score",
+  "version": "1.0.0",
+  "description": "App for tracking score for our ping pong games.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2",
+    "ws": "^7.4.6"
+  }
+}
