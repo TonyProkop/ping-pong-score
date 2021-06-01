@@ -3,6 +3,7 @@ const WebSocket = require('ws')
 const http = require('http')
 const app = express()
 const port = 3000
+const wsPort = 3001
 
 app.use(express.static('public'))
 app.use(express.json())
@@ -16,8 +17,8 @@ db.serialize(function () {
 })
 
 // WebSocket Stuff
-const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wsServer = http.createServer(app);
+const wss = new WebSocket.Server({ server: wsServer });
 
 wss.on('connection', (ws) => {
     ws.on('message', (message) => {
@@ -30,8 +31,8 @@ wss.on('connection', (ws) => {
 	sendScoreToClients()
 });
 
-server.listen(8999, () => {
-    console.log(`Server started on port ${server.address().port}.`);
+wsServer.listen(wsPort, () => {
+    console.log(`Server started on port ${wsServer.address().port}.`);
 });
 
 const sendScoreToClients = (score) => {
