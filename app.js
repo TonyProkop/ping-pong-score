@@ -7,6 +7,7 @@ const wsPort = 3001
 
 app.use(express.static('public'))
 app.use(express.json())
+app.set('view engine', 'pug')
 
 // DB Stuff
 var sqlite3 = require('sqlite3').verbose()
@@ -51,6 +52,14 @@ const sendScoreToClients = (score) => {
 // Routing Stuff
 app.get('/', (req, res) => {
 	express.static(__dirname + '/index.html')(req, res, next);
+})
+
+app.get('/a/controls', (req, res) => {
+	res.render('controls', { team: 'a' })
+})
+
+app.get('/b/controls', (req, res) => {
+	res.render('controls', { team: 'b' })
 })
 
 app.put('/a/up', (req, res) => {
