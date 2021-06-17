@@ -15,6 +15,7 @@ body {
     padding-top: 10vh;
     padding-bottom: 10vh;
     margin: 0;
+    transform: rotate(90deg);
 }
 
 .up-button,
@@ -22,10 +23,14 @@ body {
     flex-basis: 40%;
     height: 100%;
     font-size: 8rem;
+    background: transparent;
+    color: white;
+    font-size: 150px;
 }
 
 .reset-button {
     padding: 20px;
+    font-size: 30px;
 }
 
 button {
